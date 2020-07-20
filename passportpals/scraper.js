@@ -15,8 +15,26 @@ async function scrapeCountry(url) {
       
     })
 
-    console.log(data)
+    for (let i=0;i<data.length;i++) {
+        data[i].splice(2)
+
+        //first entry is undefined for some reason, remove it
+        if (typeof data[i][1] == 'undefined') {
+            data.splice(i,1)
+        }
+
+        //get rid of the wikipedia footnote link
+        let regex = /(\[\d*\])/g
+        data[i][1] = data[i][1].replace(regex,'')
+
+        //add an visaIndicator value for future chloropleth map use or not??
+        console.log(data[i][1])
+    }
+
+    //console.log(data)
     browser.close();
 }
+
+
 
 scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_South_African_citizens')
