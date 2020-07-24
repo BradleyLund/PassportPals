@@ -33,10 +33,14 @@ async function scrapeCountry(url) {
        
     }
    
-    
+    console.log(data)
     browser.close();
 }
 
 
 
-scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_South_African_citizens')
+//scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_South_African_citizens')
+
+//attempt to see if it works on different countries
+scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_United_States_citizens')
+
