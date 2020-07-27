@@ -34,12 +34,26 @@ async function scrapeCountry(url) {
        
     }
    
-    //I want to make an object for South africa. inside the south africa object will be required etc
-    let requiredCountries = []
-    
-    requiredCountries = data.filter(country=>country[1] == 'Visa Required')
+    const requiredCountries =[]
+    const eVisaCountries = []
+    const noVisaRequiredCountries = []
+    const onArrivalCountries = []
+    const otherCountries = []
 
-    console.log(data)
+    for (let country of data) {
+        if(country[1]=='Visa required') {
+            requiredCountries.push(country)
+        } else if(country[1]=='Visa not required') {
+            noVisaRequiredCountries.push(country)
+        } else if(country[1].includes('Visa on arrival')||country[1].includes('Free')) {
+            eVisaCountries.push(country)
+        } else if(country[1].includes('eVisa')||country[1].includes('Electronic')||country[1].includes('Online Visa')||country[1].includes('E-tourist')) {
+            onArrivalCountries.push(country)
+        } else {
+            otherCountries.push(country)
+        }
+    }
+    console.log(data.length,requiredCountries.length+noVisaRequiredCountries.length+eVisaCountries.length+onArrivalCountries.length+otherCountries.length)
     browser.close();
 }
 
