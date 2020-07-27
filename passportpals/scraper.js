@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer')
+const fs = require('fs')
 
 async function scrapeCountry(url) {
     const browser = await puppeteer.launch()
@@ -33,6 +34,11 @@ async function scrapeCountry(url) {
        
     }
    
+    //I want to make an object for South africa. inside the south africa object will be required etc
+    let requiredCountries = []
+    
+    requiredCountries = data.filter(country=>country[1] == 'Visa Required')
+
     console.log(data)
     browser.close();
 }
