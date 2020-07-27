@@ -1,10 +1,20 @@
 const puppeteer = require('puppeteer')
 const fs = require('fs')
 
-async function scrapeCountry(url,countryName) {
+async function scrapeCountry(url) {
     const browser = await puppeteer.launch()
     const page = await browser.newPage()
     await page.goto(url)
+
+    const countryName = await page.evaluate(()=>{
+        // //*[@id="mw-content-text"]/div/p[1]/a[1]
+        // #mw-content-text > div > p:nth-child(3) > a:nth-child(2)
+        // #mw-content-text > div > p:nth-child(2) > a:nth-child(2)
+        // #mw-content-text > div > p:nth-child(1) > a:nth-child(2)
+        // #mw-content-text > div > p:nth-child(3) > a:nth-child(2)
+
+        //trying to automate the country name from its visa requirements page
+    })
 
     const data = await page.evaluate(()=>{
         const table = document.querySelector('table')
@@ -78,7 +88,7 @@ async function scrapeCountry(url,countryName) {
 
 
 
-scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_South_African_citizens',"South Africa")
+scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_South_African_citizens')
 
 //attempt to see if it works on different countries
 //scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_United_States_citizens')
