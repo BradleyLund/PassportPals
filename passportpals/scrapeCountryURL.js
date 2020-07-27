@@ -5,6 +5,9 @@ async function scrapeURLs(url) {
     const page = await browser.newPage()
     await page.goto(url)
 
+
+    //when I make the data array i should make it length two with country name and the url
+
     const data = await page.evaluate(()=> {
         const group = document.querySelector('div.mw-category')
         

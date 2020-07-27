@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer')
 const fs = require('fs')
 
-async function scrapeCountry(url) {
+async function scrapeCountry(url,countryName) {
     const browser = await puppeteer.launch()
     const page = await browser.newPage()
     await page.goto(url)
@@ -42,25 +42,44 @@ async function scrapeCountry(url) {
 
     for (let country of data) {
         if(country[1]=='Visa required') {
-            requiredCountries.push(country)
+            requiredCountries.push({'name':country[0]})
         } else if(country[1]=='Visa not required') {
-            noVisaRequiredCountries.push(country)
+            noVisaRequiredCountries.push({'name':country[0]})
         } else if(country[1].includes('Visa on arrival')||country[1].includes('Free')) {
-            eVisaCountries.push(country)
+            eVisaCountries.push({'name':country[0]})
         } else if(country[1].includes('eVisa')||country[1].includes('Electronic')||country[1].includes('Online Visa')||country[1].includes('E-tourist')) {
-            onArrivalCountries.push(country)
+            onArrivalCountries.push({'name':country[0]})
         } else {
-            otherCountries.push(country)
+            otherCountries.push({'name':country[0]})
         }
     }
-    console.log(data.length,requiredCountries.length+noVisaRequiredCountries.length+eVisaCountries.length+onArrivalCountries.length+otherCountries.length)
+ 
+    let countryObject = {
+        "Origin Country":countryName,
+        "Visa required": requiredCountries,
+        "No visa required":noVisaRequiredCountries,
+        "eVisa": eVisaCountries,
+        "Visa on arrival": onArrivalCountries,
+        "Other":otherCountries
+    }
+
+    let json = JSON.stringify(countryObject,null,2)
+
+    fs.writeFile(`JSONfiles/${countryName}.json`, json, 'utf8', function(err) {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log('json file write complete')
+        }
+    })
+
     browser.close();
 }
 
 
 
-//scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_South_African_citizens')
+scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_South_African_citizens',"South Africa")
 
 //attempt to see if it works on different countries
-scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_United_States_citizens')
+//scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_United_States_citizens')
 
