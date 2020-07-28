@@ -7,14 +7,10 @@ async function scrapeCountry(url) {
     await page.goto(url)
 
     const countryName = await page.evaluate(()=>{
-        // //*[@id="mw-content-text"]/div/p[1]/a[1]
-        // #mw-content-text > div > p:nth-child(3) > a:nth-child(2)
-        // #mw-content-text > div > p:nth-child(2) > a:nth-child(2)
-        // #mw-content-text > div > p:nth-child(1) > a:nth-child(2)
-        // #mw-content-text > div > p:nth-child(3) > a:nth-child(2)
-
-        //trying to automate the country name from its visa requirements page
+        const legendName = document.querySelector(".thumbcaption > div:nth-child(2)")
+        return legendName.innerText
     })
+
 
     const data = await page.evaluate(()=>{
         const table = document.querySelector('table')
@@ -41,7 +37,7 @@ async function scrapeCountry(url) {
         data[i][1] = data[i][1].replace(regex,'')
 
         //add an visaIndicator value for future chloropleth map use or not??
-       
+        
     }
    
     const requiredCountries =[]
@@ -52,20 +48,20 @@ async function scrapeCountry(url) {
 
     for (let country of data) {
         if(country[1]=='Visa required') {
-            requiredCountries.push({'name':country[0]})
+            requiredCountries.push({'name':country[0].trim()})
         } else if(country[1]=='Visa not required') {
-            noVisaRequiredCountries.push({'name':country[0]})
+            noVisaRequiredCountries.push({'name':country[0].trim()})
         } else if(country[1].includes('Visa on arrival')||country[1].includes('Free')) {
-            eVisaCountries.push({'name':country[0]})
+            eVisaCountries.push({'name':country[0].trim()})
         } else if(country[1].includes('eVisa')||country[1].includes('Electronic')||country[1].includes('Online Visa')||country[1].includes('E-tourist')) {
-            onArrivalCountries.push({'name':country[0]})
+            onArrivalCountries.push({'name':country[0].trim()})
         } else {
-            otherCountries.push({'name':country[0]})
+            otherCountries.push({'name':country[0].trim()})
         }
     }
  
     let countryObject = {
-        "Origin Country":countryName,
+        "Origin Country":countryName.trim(),
         "Visa required": requiredCountries,
         "No visa required":noVisaRequiredCountries,
         "eVisa": eVisaCountries,
