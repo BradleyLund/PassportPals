@@ -2,25 +2,58 @@ const puppeteer = require('puppeteer')
 const fs = require('fs')
 
 async function scrapeCountry(url) {
-    const browser = await puppeteer.launch()
+    const browser = await puppeteer.launch({headless:false})
     const page = await browser.newPage()
     await page.goto(url)
 
     const countryName = await page.evaluate(()=>{
         const legendName = document.querySelector(".thumbcaption > div:nth-child(2)")
-        return legendName.innerText
+        if(legendName!= null) {
+            return legendName.innerText
+        } else {
+            return undefined
+        }
+
+        
     })
 
+    if (countryName == undefined) {
+        console.log(`countryName undefined: ${url}`)
+        browser.close();
+        return
+    }
 
     const data = await page.evaluate(()=>{
-        const table = document.querySelector('table')
-        const rows = table.querySelectorAll('tr')
-        return Array.from(rows, row => {
-            const columns = row.querySelectorAll('td')
-            return Array.from(columns,column => column.innerText )
-        })
+        //const table = document.querySelector('table')
+        const table = document.querySelector("#mw-content-text > div > table.sortable.wikitable.jquery-tablesorter")
+        if (table != null) {
+            const rows = table.querySelectorAll('tr')
+            if (rows!=null){
+                return Array.from(rows, row => {
+                    const columns = row.querySelectorAll('td')
+                    return Array.from(columns,column => column.innerText )
+                })
+            } else {
+                return undefined
+            }
+        } else {
+            return undefined
+        }
+
+        
       
     })
+    
+    //working it out for artsakh
+    
+
+
+
+    if (data == undefined) {
+        console.log(`data undefined: ${url}`)
+        browser.close();
+        return
+    }
 
     for (let i=0;i<data.length;i++) {
         
@@ -82,10 +115,12 @@ async function scrapeCountry(url) {
     browser.close();
 }
 
+module.exports = {
+    scrapeCountry
+}
 
 
-scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_South_African_citizens')
 
-//attempt to see if it works on different countries
-//scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_United_States_citizens')
+//scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_Artsakh_citizens')
+
 

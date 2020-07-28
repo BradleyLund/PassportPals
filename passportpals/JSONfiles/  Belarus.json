@@ -1,0 +1,592 @@
+{
+  "Origin Country": "Belarus",
+  "Visa required": [
+    {
+      "name": "Afghanistan"
+    },
+    {
+      "name": "Albania"
+    },
+    {
+      "name": "Algeria"
+    },
+    {
+      "name": "Andorra"
+    },
+    {
+      "name": "Angola"
+    },
+    {
+      "name": "Australia"
+    },
+    {
+      "name": "Austria"
+    },
+    {
+      "name": "Bahamas"
+    },
+    {
+      "name": "Bahrain"
+    },
+    {
+      "name": "Belgium"
+    },
+    {
+      "name": "Belize"
+    },
+    {
+      "name": "Bhutan"
+    },
+    {
+      "name": "Bosnia and Herzegovina"
+    },
+    {
+      "name": "Botswana"
+    },
+    {
+      "name": "Brunei"
+    },
+    {
+      "name": "Bulgaria"
+    },
+    {
+      "name": "Burkina Faso"
+    },
+    {
+      "name": "Burundi"
+    },
+    {
+      "name": "Cameroon"
+    },
+    {
+      "name": "Canada"
+    },
+    {
+      "name": "Central African Republic"
+    },
+    {
+      "name": "Chad"
+    },
+    {
+      "name": "Chile"
+    },
+    {
+      "name": "Colombia"
+    },
+    {
+      "name": "Republic of the Congo"
+    },
+    {
+      "name": "Democratic Republic of the Congo"
+    },
+    {
+      "name": "Costa Rica"
+    },
+    {
+      "name": "Croatia"
+    },
+    {
+      "name": "Cyprus"
+    },
+    {
+      "name": "Czech Republic"
+    },
+    {
+      "name": "Denmark"
+    },
+    {
+      "name": "Dominican Republic"
+    },
+    {
+      "name": "Egypt"
+    },
+    {
+      "name": "El Salvador"
+    },
+    {
+      "name": "Equatorial Guinea"
+    },
+    {
+      "name": "Eritrea"
+    },
+    {
+      "name": "Estonia"
+    },
+    {
+      "name": "Eswatini"
+    },
+    {
+      "name": "Fiji"
+    },
+    {
+      "name": "Finland"
+    },
+    {
+      "name": "France"
+    },
+    {
+      "name": "Germany"
+    },
+    {
+      "name": "Ghana"
+    },
+    {
+      "name": "Greece"
+    },
+    {
+      "name": "Grenada"
+    },
+    {
+      "name": "Guatemala"
+    },
+    {
+      "name": "Guyana"
+    },
+    {
+      "name": "Honduras"
+    },
+    {
+      "name": "Hungary"
+    },
+    {
+      "name": "Iceland"
+    },
+    {
+      "name": "Iraq"
+    },
+    {
+      "name": "Ireland"
+    },
+    {
+      "name": "Italy"
+    },
+    {
+      "name": "Japan"
+    },
+    {
+      "name": "Kiribati"
+    },
+    {
+      "name": "North Korea"
+    },
+    {
+      "name": "South Korea"
+    },
+    {
+      "name": "Kuwait"
+    },
+    {
+      "name": "Latvia"
+    },
+    {
+      "name": "Liberia"
+    },
+    {
+      "name": "Libya"
+    },
+    {
+      "name": "Liechtenstein"
+    },
+    {
+      "name": "Lithuania"
+    },
+    {
+      "name": "Luxembourg"
+    },
+    {
+      "name": "Mali"
+    },
+    {
+      "name": "Malta"
+    },
+    {
+      "name": "Marshall Islands"
+    },
+    {
+      "name": "Mexico"
+    },
+    {
+      "name": "Monaco"
+    },
+    {
+      "name": "Morocco"
+    },
+    {
+      "name": "Nauru"
+    },
+    {
+      "name": "Netherlands"
+    },
+    {
+      "name": "New Zealand"
+    },
+    {
+      "name": "Niger"
+    },
+    {
+      "name": "Nigeria"
+    },
+    {
+      "name": "Norway"
+    },
+    {
+      "name": "Oman"
+    },
+    {
+      "name": "Papua New Guinea"
+    },
+    {
+      "name": "Paraguay"
+    },
+    {
+      "name": "Philippines"
+    },
+    {
+      "name": "Poland"
+    },
+    {
+      "name": "Portugal"
+    },
+    {
+      "name": "Romania"
+    },
+    {
+      "name": "Saint Lucia"
+    },
+    {
+      "name": "San Marino"
+    },
+    {
+      "name": "Saudi Arabia"
+    },
+    {
+      "name": "Senegal"
+    },
+    {
+      "name": "Sierra Leone"
+    },
+    {
+      "name": "Slovakia"
+    },
+    {
+      "name": "Slovenia"
+    },
+    {
+      "name": "Solomon Islands"
+    },
+    {
+      "name": "South Africa"
+    },
+    {
+      "name": "South Sudan"
+    },
+    {
+      "name": "Spain"
+    },
+    {
+      "name": "Sudan"
+    },
+    {
+      "name": "Sweden"
+    },
+    {
+      "name": "Switzerland"
+    },
+    {
+      "name": "Syria"
+    },
+    {
+      "name": "Thailand"
+    },
+    {
+      "name": "Tonga"
+    },
+    {
+      "name": "Trinidad and Tobago"
+    },
+    {
+      "name": "Tunisia"
+    },
+    {
+      "name": "Turkmenistan"
+    },
+    {
+      "name": "United Arab Emirates"
+    },
+    {
+      "name": "United Kingdom"
+    },
+    {
+      "name": "United States"
+    },
+    {
+      "name": "Uruguay"
+    },
+    {
+      "name": "Vatican City"
+    },
+    {
+      "name": "Yemen"
+    }
+  ],
+  "No visa required": [
+    {
+      "name": "Antigua and Barbuda"
+    },
+    {
+      "name": "Argentina"
+    },
+    {
+      "name": "Armenia"
+    },
+    {
+      "name": "Azerbaijan"
+    },
+    {
+      "name": "Barbados"
+    },
+    {
+      "name": "Brazil"
+    },
+    {
+      "name": "China"
+    },
+    {
+      "name": "Cuba"
+    },
+    {
+      "name": "Dominica"
+    },
+    {
+      "name": "Ecuador"
+    },
+    {
+      "name": "Gambia"
+    },
+    {
+      "name": "Georgia"
+    },
+    {
+      "name": "Haiti"
+    },
+    {
+      "name": "Indonesia"
+    },
+    {
+      "name": "Israel"
+    },
+    {
+      "name": "Kazakhstan"
+    },
+    {
+      "name": "Kyrgyzstan"
+    },
+    {
+      "name": "Malaysia"
+    },
+    {
+      "name": "Micronesia"
+    },
+    {
+      "name": "Moldova"
+    },
+    {
+      "name": "Mongolia"
+    },
+    {
+      "name": "Montenegro"
+    },
+    {
+      "name": "Namibia"
+    },
+    {
+      "name": "Nicaragua"
+    },
+    {
+      "name": "North Macedonia"
+    },
+    {
+      "name": "Panama"
+    },
+    {
+      "name": "Peru"
+    },
+    {
+      "name": "Qatar"
+    },
+    {
+      "name": "Russia"
+    },
+    {
+      "name": "Saint Kitts and Nevis"
+    },
+    {
+      "name": "Saint Vincent and the Grenadines"
+    },
+    {
+      "name": "Serbia"
+    },
+    {
+      "name": "Tajikistan"
+    },
+    {
+      "name": "Turkey"
+    },
+    {
+      "name": "Ukraine"
+    },
+    {
+      "name": "Uzbekistan"
+    },
+    {
+      "name": "Vanuatu"
+    },
+    {
+      "name": "Venezuela"
+    },
+    {
+      "name": "Vietnam"
+    }
+  ],
+  "eVisa": [
+    {
+      "name": "Bangladesh"
+    },
+    {
+      "name": "Benin"
+    },
+    {
+      "name": "Bolivia"
+    },
+    {
+      "name": "Cambodia"
+    },
+    {
+      "name": "Cape Verde"
+    },
+    {
+      "name": "Comoros"
+    },
+    {
+      "name": "Guinea-Bissau"
+    },
+    {
+      "name": "Iran"
+    },
+    {
+      "name": "Jamaica"
+    },
+    {
+      "name": "Jordan"
+    },
+    {
+      "name": "Kenya"
+    },
+    {
+      "name": "Laos"
+    },
+    {
+      "name": "Lebanon"
+    },
+    {
+      "name": "Madagascar"
+    },
+    {
+      "name": "Malawi"
+    },
+    {
+      "name": "Maldives"
+    },
+    {
+      "name": "Mauritania"
+    },
+    {
+      "name": "Mauritius"
+    },
+    {
+      "name": "Mozambique"
+    },
+    {
+      "name": "Nepal"
+    },
+    {
+      "name": "Palau"
+    },
+    {
+      "name": "Rwanda"
+    },
+    {
+      "name": "Somalia"
+    },
+    {
+      "name": "Sri Lanka"
+    },
+    {
+      "name": "Tanzania"
+    },
+    {
+      "name": "Timor-Leste"
+    },
+    {
+      "name": "Togo"
+    },
+    {
+      "name": "Tuvalu"
+    },
+    {
+      "name": "Uganda"
+    },
+    {
+      "name": "Zambia"
+    },
+    {
+      "name": "Zimbabwe"
+    }
+  ],
+  "Visa on arrival": [
+    {
+      "name": "Côte d'Ivoire"
+    },
+    {
+      "name": "Djibouti"
+    },
+    {
+      "name": "Ethiopia"
+    },
+    {
+      "name": "Guinea"
+    },
+    {
+      "name": "India"
+    },
+    {
+      "name": "Lesotho"
+    },
+    {
+      "name": "Myanmar"
+    },
+    {
+      "name": "Pakistan"
+    },
+    {
+      "name": "São Tomé and Príncipe"
+    },
+    {
+      "name": "Singapore"
+    },
+    {
+      "name": "Suriname"
+    }
+  ],
+  "Other": [
+    {
+      "name": "Gabon"
+    },
+    {
+      "name": "Samoa"
+    },
+    {
+      "name": "Seychelles"
+    }
+  ]
+}

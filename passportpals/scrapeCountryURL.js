@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer')
+const scraper = require('./scraper')
 
 async function scrapeURLs(url) {
     const browser = await puppeteer.launch({headless:false})
@@ -15,7 +16,10 @@ async function scrapeURLs(url) {
         return anchors.map(a=>a.href)
     })
 
-    console.log(data)
+    //console.log(data)
+    for (let country of data) {
+       await scraper.scrapeCountry(country)
+    }
     browser.close()
 }
 
