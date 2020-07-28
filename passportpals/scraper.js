@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer')
 const fs = require('fs')
 
 async function scrapeCountry(url) {
-    const browser = await puppeteer.launch({headless:false})
+    const browser = await puppeteer.launch()
     const page = await browser.newPage()
     await page.goto(url)
 
@@ -25,9 +25,8 @@ async function scrapeCountry(url) {
 
     const data = await page.evaluate(()=>{
         //const table = document.querySelector('table')
-        const table = document.querySelector("#mw-content-text > div > table.sortable.wikitable.jquery-tablesorter")
-        if (table != null) {
-            const rows = table.querySelectorAll('tr')
+        const table = document.querySelector('table')
+        const rows = table.querySelectorAll('tr')
             if (rows!=null){
                 return Array.from(rows, row => {
                     const columns = row.querySelectorAll('td')
@@ -36,24 +35,16 @@ async function scrapeCountry(url) {
             } else {
                 return undefined
             }
-        } else {
-            return undefined
-        }
+    })
 
         
-      
-    })
-    
-    //working it out for artsakh
-    
-
-
-
-    if (data == undefined) {
-        console.log(`data undefined: ${url}`)
+    if (data==undefined) {
+        console.log(`data undefined: ${url} + ${countryName}`)
         browser.close();
         return
     }
+    
+
 
     for (let i=0;i<data.length;i++) {
         
@@ -64,6 +55,12 @@ async function scrapeCountry(url) {
         }
 
         data[i].splice(2)
+
+        if (data[i][1]===undefined) {
+            console.log(`datatable is different: ${url} + ${countryName}`)
+            browser.close();
+            return
+        }
 
         //get rid of the wikipedia footnote link
         let regex = /(\[\d*\])/g
@@ -104,11 +101,11 @@ async function scrapeCountry(url) {
 
     let json = JSON.stringify(countryObject,null,2)
 
-    fs.writeFile(`JSONfiles/${countryName}.json`, json, 'utf8', function(err) {
+    fs.writeFile(`JSONfiles/${countryName.trim()}.json`, json, 'utf8', function(err) {
         if (err) {
             console.log(err)
         } else {
-            console.log('json file write complete')
+            console.log(`json file write complete: ${countryName}`)
         }
     })
 
@@ -121,6 +118,6 @@ module.exports = {
 
 
 
-//scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_Artsakh_citizens')
+//scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_Albanian_citizens')
 
 
