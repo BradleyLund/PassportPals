@@ -19,6 +19,13 @@ async function scrapeCountry(url) {
 
     if (countryName == undefined) {
         console.log(`countryName undefined: ${url}`)
+        fs.appendFile('errors.txt',`
+        countryName undefined: ${url}`,function(err) {
+            if (err) {
+                console.log(err)
+            }
+            console.log('updated')
+        })
         browser.close();
         return
     }
@@ -40,6 +47,13 @@ async function scrapeCountry(url) {
         
     if (data==undefined) {
         console.log(`data undefined: ${url} + ${countryName}`)
+        fs.appendFile('errors.txt',`
+        data undefined: ${url} + ${countryName}`,function(err) {
+            if (err) {
+                console.log(err)
+            }
+            console.log('updated')
+        })
         browser.close();
         return
     }
@@ -58,6 +72,13 @@ async function scrapeCountry(url) {
 
         if (data[i][1]===undefined) {
             console.log(`datatable is different: ${url} + ${countryName}`)
+            fs.appendFile('errors.txt',`
+            datatable is different: ${url} + ${countryName}`,function(err) {
+                if (err) {
+                    console.log(err)
+                }
+                console.log('updated')
+            })
             browser.close();
             return
         }

@@ -30,10 +30,9 @@ async function scrapeURLs(url,url2) {
 
     const allURLs = [...data,...data2]
 
-    //console.log(data)
-    // for (let country of data) {
-    //    await scraper.scrapeCountry(country)
-    // }
+    for (let country of allURLs) {
+       await scraper.scrapeCountry(country)
+    }
     browser.close()
 }
 
