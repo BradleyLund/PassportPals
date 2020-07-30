@@ -37,30 +37,6 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-var Schema = mongoose.Schema
-
-var SubSchema = mongoose.Schema({
-    //your subschema content
-    description: String,
-    duration: Number,
-    date: String 
-},{ _id : false });
-
-
-
-var UserSchema = new Schema({
-  username: String,
-  exercise: [SubSchema]
-  
-})
-
-var User = mongoose.model('User',UserSchema)
-
-User.findOne({},function(err,user) {
-  if (err) {console.log(error)}
-  console.log(user)
-})
-
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
