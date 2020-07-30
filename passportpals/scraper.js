@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer')
 const fs = require('fs')
+const populatedb = require('./populateDB')
 
 async function scrapeCountry(url) {
     const browser = await puppeteer.launch()
@@ -119,6 +120,9 @@ async function scrapeCountry(url) {
         "Visa on arrival": onArrivalCountries,
         "Other":otherCountries
     }
+
+
+    populatedb.countryCreate(countryName,requiredCountries,noVisaRequiredCountries,eVisaCountries,onArrivalCountries,otherCountries)
 
     let json = JSON.stringify(countryObject,null,2)
 

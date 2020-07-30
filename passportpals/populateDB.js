@@ -27,6 +27,10 @@ function countryCreate(origin_name,visa_required,no_visa_required,eVisa,visa_on_
     })
 }
 
+module.exports = {
+    countryCreate
+}
+
 //I think when I am scraping the data I need to create an entry for the country in the database
 //because then in the scraper.js file we can require this file
 //and run this function as it goes!
