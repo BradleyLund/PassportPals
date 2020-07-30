@@ -6,6 +6,14 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var steven = require('./routes/steven')
+var mongoose = require('mongoose')
+
+var mongoDB =  'mongodb+srv://badgerb:ToljJo0eTWzY5YNj@cluster0.d0llu.mongodb.net/test?retryWrites=true&w=majority'
+
+mongoose.connect(mongoDB, { useNewUrlParser: true })
+var db = mongoose.connection
+db.on('error',console.error.bind(console,'MongoDB connection error:'))
 
 var app = express();
 
@@ -21,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/steven',steven) //maybe use this for individual country
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
