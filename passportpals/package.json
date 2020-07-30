@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www",
+    "serverstart": "DEBUG=passportpals:* npm run devstart"
   },
   "dependencies": {
     "chalk": "^4.1.0",
@@ -14,5 +16,8 @@
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11",
     "puppeteer": "^5.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
