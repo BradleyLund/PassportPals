@@ -9,7 +9,7 @@ mongoose.Promis = global.Promise
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-function countryCreate(origin_name,visa_required,no_visa_required,eVisa,visa_on_arrival,other) {
+async function countryCreate(origin_name,visa_required,no_visa_required,eVisa,visa_on_arrival,other) {
     var country = new Country({
         origin_name: origin_name,
         visa_required: visa_required,

@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer')
 const fs = require('fs')
 const populateDB = require('./populateDB')
+const country = require('./models/country')
 
 async function scrapeCountry(url) {
     const browser = await puppeteer.launch()
@@ -93,22 +94,36 @@ async function scrapeCountry(url) {
     }
    
     const requiredCountries =[]
+    const dbReqCountries = []
+
     const eVisaCountries = []
+    const dbeVisaCountries = []
+
     const noVisaRequiredCountries = []
+    const dbNoVisaReq = []
+
     const onArrivalCountries = []
+    const dbOnArrival = []
+
     const otherCountries = []
+    const dbOther = []
 
     for (let country of data) {
         if(country[1]=='Visa required') {
             requiredCountries.push({'name':country[0].trim()})
+            dbReqCountries.push(country[0].trim())
         } else if(country[1]=='Visa not required') {
             noVisaRequiredCountries.push({'name':country[0].trim()})
+            dbNoVisaReq.push(country[0].trim())
         } else if(country[1].includes('Visa on arrival')||country[1].includes('Free')) {
             eVisaCountries.push({'name':country[0].trim()})
+            dbeVisaCountries.push(country[0].trim())
         } else if(country[1].includes('eVisa')||country[1].includes('Electronic')||country[1].includes('Online Visa')||country[1].includes('E-tourist')) {
             onArrivalCountries.push({'name':country[0].trim()})
+            dbOnArrival.push(country[0].trim())
         } else {
             otherCountries.push({'name':country[0].trim()})
+            dbOther.push(country[0].trim())
         }
     }
  
@@ -122,7 +137,7 @@ async function scrapeCountry(url) {
     }
 
 
-    populateDB.countryCreate(countryName,requiredCountries,noVisaRequiredCountries,eVisaCountries,onArrivalCountries,otherCountries)
+    populateDB.countryCreate(countryName.trim(),dbReqCountries,dbNoVisaReq,dbeVisaCountries,dbOnArrival,dbOther)
 
     let json = JSON.stringify(countryObject,null,2)
 
