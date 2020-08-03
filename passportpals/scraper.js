@@ -133,7 +133,8 @@ async function scrapeCountry(url) {
         "No visa required":noVisaRequiredCountries,
         "eVisa": eVisaCountries,
         "Visa on arrival": onArrivalCountries,
-        "Other":otherCountries
+        "Other":otherCountries,
+        "url":url
     }
 
 
