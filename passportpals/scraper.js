@@ -118,7 +118,7 @@ async function scrapeCountry(url) {
         } else if(country[1].includes('Visa on arrival')||country[1].includes('Free')) {
             eVisaCountries.push({'name':country[0].trim()})
             dbeVisaCountries.push(country[0].trim())
-        } else if(country[1].includes('eVisa')||country[1].includes('Electronic')||country[1].includes('Online Visa')||country[1].includes('E-tourist')) {
+        } else if(country[1].includes('eVisa')||country[1].includes('Electronic')||country[1].includes('Online Visa')||country[1].includes('E-tourist')||country[1].includes('e-Visa')) {
             onArrivalCountries.push({'name':country[0].trim()})
             dbOnArrival.push(country[0].trim())
         } else {
