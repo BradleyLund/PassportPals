@@ -26,18 +26,22 @@ exports.compareTwo = function(req,res,next) {
         if (err) {return next(err)}
         //compare the two countries and make a new country object to send to a render page
         let combinedVisaRequired = []
-        let combindeNoVisaRequired = []
+        let combinedNoVisaRequired = []
         let combinedeVisa = []
         let combinedOnArrival = []
         let combinedOther = []
 
         for (let i=0;i<results.country1.no_visa_required.length;i++) {
             if (results.country2.no_visa_required.indexOf(results.country1.no_visa_required[i])!=-1){
-                combindeNoVisaRequired.push(results.country1.no_visa_required[i])
-            }
+                combinedNoVisaRequired.push(results.country1.no_visa_required[i])
+            } 
         }
 
-        res.json(combindeNoVisaRequired)
+        results.country1.visa_required.map((country)=>{
+
+        })
+
+        res.json(combinedNoVisaRequired)
     })
     //find the two countries in the database and then display their stuff
     //just like the individual country one
