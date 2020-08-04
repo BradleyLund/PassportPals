@@ -8,6 +8,7 @@ require('dotenv').config({path: __dirname + '/.env'})
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var individualCountryRouter = require('./routes/individualCountry')
+var compareCountryRouter = require('./routes/compareCountry')
 var mongoose = require('mongoose')
 
 var mongoDB =  process.env.DB_URI
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/IndividualCountry',individualCountryRouter) //maybe use this for individual country
+app.use('/compareCountry',compareCountryRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
