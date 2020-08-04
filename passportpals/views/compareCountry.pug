@@ -3,3 +3,15 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  form(method='GET' action='')
+    div.form-group
+        label(for="country") Country:
+        select#country.form-control(type='select' placeholder='Select Country' name='country' required='true')
+            for country in countries
+                option(value=country._id) #{country.origin_name}
+    .form-group
+        label(for="country2") Country2:
+        select#country2.form-control(type='select' name="country2" required='true')
+            for country in countries
+                option(value=country._id) #{country.origin_name}
