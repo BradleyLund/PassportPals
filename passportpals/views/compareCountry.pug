@@ -4,7 +4,7 @@ block content
   h1= title
   p Welcome to #{title}
 
-  form(method='GET' action='comp')
+  form(method='GET' action='/compareCountry/comp')
     div.form-group
         label(for="country") Country:
         select#country.form-control(type='select' placeholder='Select Country' name='country' required='true')
