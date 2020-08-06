@@ -1,23 +1,26 @@
 body {
-  padding: 50px;
-  height: 100%;
+  margin:0;
+  background: url('../images/passportBackground.jpg');;
+
+  height: 90%;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: -50px;
+  
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.headings {
+  background-color: white;
+  width: 50%;
+  height: 100%;
 }
 
 html {
   height: 100%;
-}
-
-.bg {   
-
-  background-image: url('../images/passportBackground.jpg');
-
-  height: 100%;
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
+  margin: 0;
 }
 
 a {
