@@ -1,6 +1,23 @@
 body {
   padding: 50px;
+  height: 100%;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+.bg {   
+
+  background-image: url('../images/passportBackground.jpg');
+
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 a {
