@@ -4,9 +4,25 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    .headings
-      h1 Passport Pals
-      p Welcome to Passport Pals, the perfect place to find destinations for you and your mates from all over the world.
-        |Simply put in each country that you and your friends are from and then click submit.
-        |And find out where your group of global friends can travel to!
-    block content
+    div.container
+      .headings#input
+        h1 Passport Pals
+        p Welcome to Passport Pals, the perfect place to find destinations for you and your mates from all over the world.
+          |Simply put in each country that you and your friends are from and then click submit.
+          |And find out where your group of global friends can travel to!
+        form(method='GET' action='/comp')
+          div.form-group
+            label(for="country") Country:
+              select#country.form-control(type='select' placeholder='Select Country' name='country' required='true')
+                for country in countries
+                  option(value=country.origin_name) #{country.origin_name}
+          .form-group
+            label(for="country2") Country2:
+              select#country2.form-control(type='select' name="country2" required='true')
+                for country in countries
+                  option(value=country.origin_name) #{country.origin_name}
+          button.btn.btn-primary(type='submit') Submit
+      div#output
+        p The right side where the output should go
+        block content
+    

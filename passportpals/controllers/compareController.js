@@ -10,11 +10,12 @@ exports.compareCountry_get = function(req,res,next) {
     //find all countries and then select only the origin_name?
     Country.find({},function(err,countries) {
         if (err) {return next(err)}
-        res.render('compareCountry',{ title: 'Compare Countries', countries: countries})
+        res.render('layout',{ title: 'Compare Countries', countries: countries})
     })
 }
 
 exports.compareTwo = function(req,res,next) {
+
     async.parallel({
         country1: function(callback) {
             Country.findOne({origin_name: `${req.query.country}`},callback)
@@ -22,6 +23,9 @@ exports.compareTwo = function(req,res,next) {
         country2: function(callback) {
             Country.findOne({origin_name: `${req.query.country2}`},callback)
         },
+        countries: function(callback) {
+            Country.find({},callback)
+        }
     }, function(err,results) {
         if (err) {return next(err)}
         //compare the two countries and make a new country object to send to a render page
@@ -72,7 +76,7 @@ exports.compareTwo = function(req,res,next) {
 
 
 
-        res.render('combined-view',{title: `${results.country1.origin_name} and ${results.country2.origin_name}`,data: data})
+        res.render('combined-view',{title: `${results.country1.origin_name} and ${results.country2.origin_name}`,data: data, countries:results.countries})
     })
     //find the two countries in the database and then display their stuff
     //just like the individual country one

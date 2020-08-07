@@ -1,6 +1,6 @@
 body {
   margin:0;
-  background: url('../images/passportBackground.jpg');;
+  background: url('../images/roberto-nickson-HQMyV8a_4_4-unsplash.jpg');;
 
   height: 90%;
 
@@ -12,10 +12,26 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-.headings {
-  background-color: white;
-  width: 50%;
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
   height: 100%;
+}
+
+.headings {
+  
+  background-color: white;
+  border-radius: 7%;
+  width: 33%;
+  height: 50%;
+}
+
+#output {
+  background-color: white;
+  width: 33%;
+  height: 80%;
 }
 
 html {
