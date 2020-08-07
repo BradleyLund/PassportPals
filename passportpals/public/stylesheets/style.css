@@ -66,15 +66,37 @@ button {
 
 
 #output {
-  background-color: white;
-  width: 33%;
-  height: 80%;
-  border-radius: 5%;
+  width: 60%;
+  height: 90%;  
+  text-align: center;
+
+}
+
+#results {
+  display: flex;
+  background-color:rgb(117, 23, 204);
+  color: white;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  overflow:auto;
+}
+
+.visaSection {
+  width:18%;
+  height:100%;
+
+  /* overflow: scroll; */
+  
 }
 
 html {
   height: 100%;
   margin: 0;
+}
+
+li {
+  font-size: smaller;
 }
 
 a {
