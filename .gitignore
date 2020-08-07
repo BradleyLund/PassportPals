@@ -1,2 +1,6 @@
 /passportpals/node_modules
 /passportpals/public/images
+JSONfiles/
+errors.txt
+.env
+node_modules

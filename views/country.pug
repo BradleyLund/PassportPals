@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h1= origin_country
+  p Welcome to #{origin_country} 🏴‍☠️ 
+
+  p= data
+
+  h2 Visa's not required
+    ul  
+      each country in data.no_visa_required
+        li= country
+
+  h2 Visa's required  
+    ul
+      each country in data.visa_required
+        li= country
+
+  h2 eVisa required
+    ul  
+      each country in data.eVisa
+        li= country
+
+  h2 Visa on arrival
+    ul
+      each country in data.visa_on_arrival
+        li= country
+
+  h2 Other
+    ul 
+      each country in data.other
+        li= country
