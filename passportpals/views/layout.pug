@@ -22,6 +22,7 @@ html
                 for country in countries
                   option(value=country.origin_name) #{country.origin_name}
           button.btn.btn-primary(type='submit') Submit
+          form(method='GET' action='')
       div#output
         p The right side where the output should go
         block content
