@@ -11,18 +11,18 @@ html
           p Welcome to Passport Pals, the perfect place to find destinations for you and your mates from all over the world.
             |Simply put in each country that you and your friends are from and then click submit.
             |And find out where your group of global friends can travel to!
-        .dropdowns
-          form(method='GET' action='/comp')
+        .form
+          form.dropdowns(method='GET' action='/comp')
             div.form-group
-              label(for="country") Country:
-                select#country.form-control(type='select' placeholder='Select Country' name='country' required='true')
-                  for country in countries
-                    option(value=country.origin_name) #{country.origin_name}
+              select.countryDrop.form-control(type='select' placeholder='Select Country' name='country' required='true')
+                option(value="" disabled selected) Select a country
+                for country in countries
+                  option(value=country.origin_name) #{country.origin_name}
             .form-group
-              label(for="country2") Country2:
-                select#country2.form-control(type='select' name="country2" required='true')
-                  for country in countries
-                    option(value=country.origin_name) #{country.origin_name}
+              select.countryDrop.form-control(type='select' name="country2" required='true')
+                option(value="" disabled selected) Select a country
+                for country in countries
+                  option(value=country.origin_name) #{country.origin_name}
             button.btn.btn-primary(type='submit') Submit
 
       div#output

@@ -21,17 +21,55 @@ body {
 }
 
 #input {
-  
-  background-color: white;
-  border-radius: 7%;
+
+  border-radius: 5%;
   width: 33%;
-  height: 50%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+ 
 }
+
+select {
+  margin-top: 10px;
+  width: 160px;
+  height: 50px;
+  border-radius: 5%;
+  border: #0277CA 1px solid;
+  font-weight: bold;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.dropdowns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  margin-top: 10px;
+  width: 70px;
+  height: 35px;
+  border-radius: 5%;
+  background-color: blue;
+  color:white;
+  border: #0277CA 1px solid;
+  font-weight: bold;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
 
 #output {
   background-color: white;
   width: 33%;
   height: 80%;
+  border-radius: 5%;
 }
 
 html {
