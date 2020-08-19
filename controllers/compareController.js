@@ -8,7 +8,7 @@ exports.compareCountry_get = function(req,res,next) {
     //get all countries and then send them to the view
     
     //find all countries and then select only the origin_name?
-    Country.find({},function(err,countries) {
+    Country.find({}).sort({origin_name: 'asc'}).exec(function(err,countries) {
         if (err) {return next(err)}
         res.render('layout',{ title: 'Compare Countries', countries: countries})
     })

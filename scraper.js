@@ -159,6 +159,6 @@ module.exports = {
 
 
 
-//scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_South_African_citizens')
+scrapeCountry('https://en.wikipedia.org/wiki/Visa_requirements_for_South_African_citizens')
 
 
